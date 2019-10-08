@@ -19,4 +19,8 @@ public class MainActivity extends AppCompatActivity {
     private void toastMsg(String toast){
         Toast.makeText(this, toast, Toast.LENGTH_SHORT).show();
     }
+
+    private void toastMsg(String toast,int Length){
+        Toast.makeText(this, toast, Length).show();
+    }
 }
