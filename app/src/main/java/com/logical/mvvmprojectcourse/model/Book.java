@@ -8,6 +8,8 @@ import android.arch.persistence.room.PrimaryKey;
 import android.databinding.BaseObservable;
 import android.databinding.Bindable;
 
+//import com.logical.mvvmprojectcourse.BR;
+
 import com.logical.mvvmprojectcourse.BR;
 
 import static android.arch.persistence.room.ForeignKey.CASCADE;
@@ -44,22 +46,22 @@ public class Book extends BaseObservable {
 
     public void setBookId(int bookId) {
         this.bookId = bookId;
-        notifyPropertyChanged(BR.bookId);
+        notifyPropertyChanged(com.logical.mvvmprojectcourse.BR.bookId);
     }
 
     public void setCategoryId(int categoryId) {
         this.categoryId = categoryId;
-        notifyPropertyChanged(BR.categoryId);
+        notifyPropertyChanged(com.logical.mvvmprojectcourse.BR.categoryId);
     }
 
     public void setBookName(String bookName) {
         this.bookName = bookName;
-        notifyPropertyChanged(BR.bookName);
+        notifyPropertyChanged(com.logical.mvvmprojectcourse.BR.bookName);
     }
 
     public void setUnitPrice(String unitPrice) {
         this.unitPrice = unitPrice;
-        notifyPropertyChanged(BR.unitPrice);
+        notifyPropertyChanged(com.logical.mvvmprojectcourse.BR.unitPrice);
     }
 
     //GETTERS
