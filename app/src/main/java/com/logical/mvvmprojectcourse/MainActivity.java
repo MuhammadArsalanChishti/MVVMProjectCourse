@@ -9,6 +9,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     //MVVM HomeBranch
+    //https://www.youtube.com/watch?v=Aj-sZ2JWnj4
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
