@@ -28,6 +28,8 @@ public class EBookShopRepository {
         return categoryDAO.getAllCategory();
     }
 
+
+
     private  void insertCategory(Category category){
         new InsertCategoryAsyncTask(categoryDAO).execute(category);
     }
@@ -65,6 +67,88 @@ public class EBookShopRepository {
         @Override
         protected Void doInBackground(Book... books) {
             bookDAO.insertBook(books[0]);
+            return null;
+        }
+    }
+
+
+
+    public void deleteCategory(Category category){
+
+        new DeleteCategoryAsyncTask(categoryDAO).execute(category);
+    }
+
+    private static class DeleteCategoryAsyncTask extends AsyncTask<Category,Void,Void>{
+        private CategoryDAO categoryDAO;
+
+        public DeleteCategoryAsyncTask(CategoryDAO categoryDAO) {
+            this.categoryDAO = categoryDAO;
+        }
+
+        @Override
+        protected Void doInBackground(Category... categories) {
+
+            categoryDAO.deleteCategory(categories[0]);
+            return null;
+        }
+    }
+
+    public void deleteBook(Book book){
+
+        new DeleteBookAsyncTask(bookDAO).execute(book);
+    }
+
+    private static class DeleteBookAsyncTask extends AsyncTask<Book,Void,Void>{
+        private BookDAO bookDAO;
+
+        public DeleteBookAsyncTask(BookDAO bookDAO) {
+            this.bookDAO = bookDAO;
+        }
+
+        @Override
+        protected Void doInBackground(Book... books) {
+
+            bookDAO.deleteBook(books[0]);
+            return null;
+        }
+    }
+
+    public void updateCategory(Category category){
+
+        new UpdateCategoryAsyncTask(categoryDAO).execute(category);
+    }
+
+    private static class UpdateCategoryAsyncTask extends AsyncTask<Category,Void,Void>{
+        private CategoryDAO categoryDAO;
+
+        public UpdateCategoryAsyncTask(CategoryDAO categoryDAO) {
+            this.categoryDAO = categoryDAO;
+        }
+
+        @Override
+        protected Void doInBackground(Category... categories) {
+
+            categoryDAO.updateCategory(categories[0]);
+            return null;
+        }
+    }
+
+    public void updateBook(Book book){
+
+        new UpdateBookAsyncTask(bookDAO).execute(book);
+    }
+
+    private static class UpdateBookAsyncTask extends AsyncTask<Book,Void,Void>{
+        private BookDAO bookDAO;
+
+        public UpdateBookAsyncTask(BookDAO bookDAO) {
+            this.bookDAO = bookDAO;
+        }
+
+        @Override
+        protected Void doInBackground(Book... books) {
+
+            bookDAO.updateBook(books[0]);
             return null;
         }
     }

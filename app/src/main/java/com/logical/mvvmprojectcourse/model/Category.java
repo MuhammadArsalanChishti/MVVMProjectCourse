@@ -40,12 +40,12 @@ public class Category extends BaseObservable {
 
     public void setCategoryName(String categoryName) {
         this.categoryName = categoryName;
-        notifyPropertyChanged(BR.categoryName);
+        notifyPropertyChanged(com.logical.mvvmprojectcourse.BR.categoryName);
     }
 
     public void setCategoryDescription(String categoryDescription) {
         this.categoryDescription = categoryDescription;
-        notifyPropertyChanged(BR.categoryDescription);
+        notifyPropertyChanged(com.logical.mvvmprojectcourse.BR.categoryDescription);
     }
 
     @Bindable
