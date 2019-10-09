@@ -52,7 +52,7 @@ public class EBookShopRepository {
 
 
 
-    private  void insertBook(Book book){
+    public   void insertBook(Book book){
         new InsertBookAsyncTask(bookDAO).execute(book);
     }
 
