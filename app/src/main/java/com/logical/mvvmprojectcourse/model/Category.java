@@ -6,6 +6,7 @@ import android.arch.persistence.room.Ignore;
 import android.arch.persistence.room.PrimaryKey;
 import android.databinding.BaseObservable;
 import android.databinding.Bindable;
+import android.support.annotation.NonNull;
 
 import com.logical.mvvmprojectcourse.BR;
 
@@ -61,5 +62,10 @@ public class Category extends BaseObservable {
     @Bindable
     public String getCategoryDescription() {
         return categoryDescription;
+    }
+
+    @Override
+    public String toString() {
+        return this.categoryName;
     }
 }
